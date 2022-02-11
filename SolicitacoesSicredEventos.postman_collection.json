@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "2dd73511-2ff5-49c4-99eb-fcff2f37742f",
+		"name": "Desafio Banco Sicred",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Eventos Disponíveis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5f5a8f24d44d640016169133.mockapi.io/api/events",
+					"protocol": "https",
+					"host": [
+						"5f5a8f24d44d640016169133",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "@deprecated Get Dados do Evento",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://5f5a8f24d44d640016169133.mockapi.io/api/events/1",
+					"protocol": "https",
+					"host": [
+						"5f5a8f24d44d640016169133",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"events",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check-in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"eventId\": \"1\",\r\n    \"name\": \"KryslanTestePostman\",\r\n    \"email\": \"kryslan2680@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://5f5a8f24d44d640016169133.mockapi.io/api/checkin",
+					"protocol": "https",
+					"host": [
+						"5f5a8f24d44d640016169133",
+						"mockapi",
+						"io"
+					],
+					"path": [
+						"api",
+						"checkin"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
