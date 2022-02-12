@@ -1,6 +1,4 @@
-package br.com.sicredi.sicredieventos.eventos.model
-
-import br.com.sicredi.sicredieventos.eventos.presenter.EventosPresenter
+package br.com.sicredi.sicredieventos.eventos
 
 class EventosModel (eventosPresenter: EventosPresenter) {
 

@@ -1,7 +1,4 @@
-package br.com.sicredi.sicredieventos.eventos.presenter
-
-import br.com.sicredi.sicredieventos.eventos.model.EventosModel
-import br.com.sicredi.sicredieventos.eventos.view.EventosView
+package br.com.sicredi.sicredieventos.eventos
 
 class EventosPresenter(eventosView: EventosView) {
 

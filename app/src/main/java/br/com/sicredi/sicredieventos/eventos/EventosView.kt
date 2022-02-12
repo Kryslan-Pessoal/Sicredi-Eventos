@@ -1,11 +1,9 @@
-package br.com.sicredi.sicredieventos.eventos.view
+package br.com.sicredi.sicredieventos.eventos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import android.widget.Toolbar
 import br.com.sicredi.sicredieventos.R
-import br.com.sicredi.sicredieventos.eventos.presenter.EventosPresenter
 
 class EventosView : AppCompatActivity() {
 
