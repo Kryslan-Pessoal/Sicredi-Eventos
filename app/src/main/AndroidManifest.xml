@@ -9,10 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SicrediEventos">
-        <activity android:name=".TelaInicialDeCarregamento"
+        <activity android:name=".eventos.view.EventosView" />
+        <activity
+            android:name=".TelaInicialDeCarregamento"
             android:exported="true"
-            tools:node="merge"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:node="merge">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

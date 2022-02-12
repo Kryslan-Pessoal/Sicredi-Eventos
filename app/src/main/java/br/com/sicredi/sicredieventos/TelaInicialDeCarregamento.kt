@@ -1,12 +1,12 @@
 package br.com.sicredi.sicredieventos
 
-import android.os.Build
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Window
 import android.view.WindowManager
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import br.com.sicredi.sicredieventos.eventos.view.EventosView
 
 
 /**
@@ -32,7 +32,7 @@ class TelaInicialDeCarregamento : AppCompatActivity() {
     }
 
     private fun criaTimerParaIrParaProximaTela() {
-        val timer = object: CountDownTimer(20000, 1000){
+        val timer = object: CountDownTimer(1000, 1000){
             override fun onTick(millisUntilFinished: Long){}
             override fun onFinish() {
 
@@ -43,6 +43,8 @@ class TelaInicialDeCarregamento : AppCompatActivity() {
         timer.start()
     }
     private fun chamaProximaTela(){
-        Toast.makeText(this, "Próxima tela chamada", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, EventosView::class.java).apply {}
+        startActivity(intent)
+        finish()
     }
 }
