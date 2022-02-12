@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Sicredi Eventos</string>
     <string name="logo_sicredi_eventos">Logo Sicredi Eventos</string>
+    <string name="foto_do_evento">Foto do Evento</string>
 </resources>
