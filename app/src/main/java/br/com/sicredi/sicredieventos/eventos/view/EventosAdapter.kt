@@ -45,7 +45,11 @@ class EventosAdapter (
 
     private fun converteDoubleEmMoeda(valor: Double): String{
         return try {
-            "R$ " + valor.toBigDecimal().toPlainString()
+            val valorConvertido: String = "R$ " + valor.toBigDecimal().toPlainString()
+            if(valorConvertido.indexOf('.') != -1)
+                valorConvertido.replace('.', ',')
+
+            valorConvertido
         } catch (ignored: Exception) {
             "R$ 0,00"
         }

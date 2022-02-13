@@ -1,5 +1,6 @@
 package br.com.sicredi.sicredieventos.eventos
 
+import br.com.sicredi.sicredieventos.entidades.Evento
 import br.com.sicredi.sicredieventos.eventos.view.EventosView
 
 class EventosPresenter(eventosView: EventosView) {
@@ -9,7 +10,22 @@ class EventosPresenter(eventosView: EventosView) {
     val view = eventosView
 
     fun processaBuscaEventos() {
-        view.recebeEventos(22)
+        val eventos: ArrayList<Evento> = ArrayList()
+        val evento = Evento(
+            1,
+            "Feira de adoção de animais na Redenção",
+            "O Patas Dadas estará na Redenção, nesse domingo, com cães \n" +
+                    "para adoção e produtos à venda...",
+            null,
+            123,
+            "",
+            123,
+            123,
+            29.99
+        )
+        eventos.add(evento)
+
+        view.recebeEventos(eventos)
     }
 
 }

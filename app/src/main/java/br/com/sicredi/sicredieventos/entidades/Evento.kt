@@ -8,7 +8,7 @@ data class Evento(
     /** Descrição do Evento */
     var description: String,
     /** ??? */
-    var people: Any,
+    var people: Any?,
     /** Data do Evento no formato ??? */
     var date: Long,
     /** Imagem de ícone para o evento */
