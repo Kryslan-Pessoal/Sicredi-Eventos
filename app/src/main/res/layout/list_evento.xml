@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Imagem do Evento -->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoEvento_imageView"
         android:layout_width="50dp"
 
         android:layout_height="50dp"
@@ -21,7 +20,7 @@
 
     <!-- Título -->
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tituloEvento_TextView"
         android:layout_width="0dp"
         android:layout_height="19dp"
 
@@ -33,14 +32,14 @@
         android:text="Feira de adoção de animais na Redenção"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/descricaoEvento_textView"
+        app:layout_constraintEnd_toStartOf="@+id/dataEvento_TextView"
+        app:layout_constraintStart_toEndOf="@+id/logoEvento_imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Descrição -->
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/descricaoEvento_textView"
         android:layout_width="0dp"
         android:layout_height="0dp"
 
@@ -52,15 +51,15 @@
 para adoção e produtos à venda..."
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/divider"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toStartOf="@+id/precoEvento_textView"
+        app:layout_constraintStart_toStartOf="@+id/tituloEvento_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/tituloEvento_TextView" />
 
     <!-- Data -->
 
     <!-- Preço -->
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/dataEvento_TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -77,7 +76,7 @@ para adoção e produtos à venda..."
     <!-- Separador -->
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/precoEvento_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -87,7 +86,7 @@ para adoção e produtos à venda..."
 
         android:textColor="@color/texto_verde"
         android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintBottom_toBottomOf="@+id/descricaoEvento_textView"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <View
@@ -100,6 +99,6 @@ para adoção e produtos à venda..."
         android:background="@color/borda_cinza"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/logoEvento_imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

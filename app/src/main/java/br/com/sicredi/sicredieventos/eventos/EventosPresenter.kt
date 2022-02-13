@@ -1,5 +1,7 @@
 package br.com.sicredi.sicredieventos.eventos
 
+import br.com.sicredi.sicredieventos.eventos.view.EventosView
+
 class EventosPresenter(eventosView: EventosView) {
 
 

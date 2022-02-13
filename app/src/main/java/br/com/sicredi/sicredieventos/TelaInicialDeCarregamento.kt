@@ -6,7 +6,7 @@ import android.os.CountDownTimer
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import br.com.sicredi.sicredieventos.eventos.EventosView
+import br.com.sicredi.sicredieventos.eventos.view.EventosView
 
 
 /**
