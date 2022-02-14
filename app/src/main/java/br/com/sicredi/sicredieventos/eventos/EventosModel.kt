@@ -19,8 +19,10 @@ class EventosModel (eventosPresenter: EventosPresenter) {
             /** Quando a resposta do Servidor é bem sucedida
              * @param retorno: Retorno do servidor (convertido para String)
              */
-            override fun onResponse(retorno: String?) {
-                var eu = 22;
+            override fun onResponse(retorno: String) {
+
+                presenter.processaBuscaEventos(retorno)
+
             }
 
             /** Quando ocorre algum erro na comunicação

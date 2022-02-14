@@ -2,6 +2,7 @@ package br.com.sicredi.sicredieventos.eventos
 
 import br.com.sicredi.sicredieventos.entidades.Evento
 import br.com.sicredi.sicredieventos.eventos.view.EventosView
+import org.json.JSONArray
 
 class EventosPresenter(eventosView: EventosView) {
 
@@ -9,7 +10,12 @@ class EventosPresenter(eventosView: EventosView) {
     val model = EventosModel(this)
     val view = eventosView
 
-    fun processaBuscaEventos() {
+    fun processaBuscaEventos(retornoString: String) {
+
+        var retornoJson = JSONArray(retornoString)
+
+
+
         val eventos: ArrayList<Evento> = ArrayList()
         val evento = Evento(
             1,
