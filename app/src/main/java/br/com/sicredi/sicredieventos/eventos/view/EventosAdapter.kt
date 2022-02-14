@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicredieventos.entidades.Evento
+import com.squareup.picasso.Callback
+import com.squareup.picasso.Picasso
 
 class EventosAdapter (
     private val context: Activity,
@@ -31,7 +33,14 @@ class EventosAdapter (
         val precoEvento_textView: TextView = view.findViewById(R.id.precoEvento_textView)
 
         //Carrega Imagem
-        //TODO
+        Picasso.get().load(eventos[position].image).into(logoEvento_imageView, object: Callback {
+            override fun onSuccess() {
+                Picasso.get().load(eventos[position].image).into(logoEvento_imageView)
+            }
+            override fun onError(e: Exception?) {
+                Picasso.get().load(R.drawable.sicredi_eventos_logo).into(logoEvento_imageView)
+            }
+        })
 
         //Carrega os textos
         tituloEvento_TextView.text = eventos[position].title
