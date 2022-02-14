@@ -1,9 +1,11 @@
 package br.com.sicredi.sicredieventos.eventos.view
 
+import android.app.ProgressDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicredieventos.databinding.ActivityEventosBinding
 import br.com.sicredi.sicredieventos.entidades.Evento
@@ -17,6 +19,8 @@ class EventosView : AppCompatActivity() {
     private lateinit var binding: ActivityEventosBinding
 
     private lateinit var eventos: ArrayList<Evento>
+
+    private lateinit var progressDialog: ProgressDialog
     //endregion Globais
 
     //region onCreate
@@ -39,6 +43,8 @@ class EventosView : AppCompatActivity() {
      */
     private fun buscaEventos(){
 
+        showLoading()
+
         presenter.model.buscaEventos()
 
     }
@@ -53,13 +59,12 @@ class EventosView : AppCompatActivity() {
         preencheListView()
 
     }
-    fun erroBuscaEvento(mensagemDeErro: String) {
-        //TODO
-    }
     //endregion Busca Eventos
 
     //region Preenche ListView com Eventos
     private fun preencheListView() {
+
+        hideLoading()
 
         binding.eventosListView.isClickable = true
         binding.eventosListView.adapter = EventosAdapter(this, eventos)
@@ -74,6 +79,28 @@ class EventosView : AppCompatActivity() {
     private fun configuraToolbar() {
         supportActionBar?.title = "Eventos"
         setSupportActionBar(findViewById(R.id.toolbar))
+    }
+    fun erro(mensagemDeErro: String){
+
+        hideLoading()
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Erro!")
+        builder.setMessage(mensagemDeErro)
+        builder.setPositiveButton("Ok"){ _, _ -> }
+        builder.setIcon(R.drawable.ic_erro)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+    private fun showLoading(){
+        progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Buscando Eventos...")
+        progressDialog.show()
+    }
+    private fun hideLoading(){
+        try {
+            progressDialog.hide()
+        }catch (ignored: Exception){}
     }
     //endregion Utilitarios
 }

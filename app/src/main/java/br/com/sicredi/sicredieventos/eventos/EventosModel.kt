@@ -32,7 +32,7 @@ class EventosModel (eventosPresenter: EventosPresenter) {
              */
             override fun onFailure(retorno: String, throwable: Exception?) {
 
-                presenter.view.erroBuscaEvento(
+                presenter.view.erro(
                     Erros.geraMensagemDeErro(
                     "Erro ao buscar eventos no Servidor!",
                     Erros.ERRO1,

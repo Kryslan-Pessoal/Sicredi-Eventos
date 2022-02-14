@@ -28,7 +28,7 @@ class EventosPresenter(eventosView: EventosView) {
 
         }catch (e: Exception){
 
-            view.erroBuscaEvento(Erros.geraMensagemDeErro(
+            view.erro(Erros.geraMensagemDeErro(
                 "Erro ao processar os eventos retornados do Servidor!",
                 Erros.ERRO0,
                 e
