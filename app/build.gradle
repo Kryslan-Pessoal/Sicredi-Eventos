@@ -49,5 +49,6 @@ dependencies {
     //Permite manipular JSON mais facilmente
     implementation 'com.google.code.gson:gson:2.9.0'
 
+    //Permite manipular Fotos em ImageViews mais facilmente
     implementation 'com.squareup.picasso:picasso:2.71828'
 }

@@ -1,11 +1,13 @@
 package br.com.sicredi.sicredieventos.eventos.view
 
 import android.app.ProgressDialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import br.com.sicredi.sicredieventos.DadosDoEventoView
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicredieventos.databinding.ActivityEventosBinding
 import br.com.sicredi.sicredieventos.entidades.Evento
@@ -69,7 +71,9 @@ class EventosView : AppCompatActivity() {
         binding.eventosListView.isClickable = true
         binding.eventosListView.adapter = EventosAdapter(this, eventos)
         binding.eventosListView.setOnItemClickListener {parent, view, position, id ->
-            Toast.makeText(this, "Clicado: " + eventos[position].title, Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, DadosDoEventoView::class.java)
+            //intent.putExtra("keyIdentifier", value)
+            startActivity(intent)
         }
 
     }
