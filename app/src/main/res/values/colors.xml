@@ -5,8 +5,13 @@
     <color name="secondaryColor">#3C781E</color>
     <color name="accent">#757575</color>
 
+
+    <!-- Texto -->
+    <color name="textoPreto">#FF000000</color>
+    <color name="textoCinza">#545454</color>
+    <color name="textoCinza2">#B7B7B7</color>
+    <color name="textoBranco">#FFFFFFFF</color>
     <color name="texto_verde">#64C832</color>
-    <color name="borda_cinza">#D5D5D5</color>
 
     <!-- Cores gerais -->
     <color name="black">#FF000000</color>

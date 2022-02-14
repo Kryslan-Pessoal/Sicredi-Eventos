@@ -30,7 +30,7 @@
         android:layout_marginEnd="6dp"
         android:layout_marginBottom="1dp"
         android:text="Feira de adoção de animais na Redenção"
-        android:textColor="@color/black"
+        style="@style/primaryText"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/descricaoEvento_textView"
         app:layout_constraintEnd_toStartOf="@+id/dataEvento_TextView"
@@ -40,13 +40,14 @@
     <!-- Descrição -->
     <TextView
         android:id="@+id/descricaoEvento_textView"
+        style="@style/secondaryText"
         android:layout_width="0dp"
-        android:layout_height="0dp"
 
+        android:layout_height="0dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="14dp"
 
+        android:layout_marginBottom="10dp"
         android:text="O Patas Dadas estará na Redenção, nesse domingo, com cães
 para adoção e produtos à venda..."
         android:textSize="10sp"

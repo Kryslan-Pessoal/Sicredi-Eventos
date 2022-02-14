@@ -5,11 +5,20 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/secondaryColor</item>
 
-        <item name="colorOnPrimary">@color/black</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <!-- Texto Primário -->
+        <item name="colorOnPrimary">@color/textoBranco</item>
+        <item name="colorOnSecondary">@color/textoCinza2</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="primaryText" parent="android:Theme">
+        <item name="android:textColor">@color/textoBranco</item>
+    </style>
+    <style name="secondaryText" parent="android:Theme">
+        <item name="android:textColor">@color/textoCinza2</item>
+    </style>
+
 </resources>

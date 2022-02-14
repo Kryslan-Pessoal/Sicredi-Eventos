@@ -45,9 +45,9 @@ class EventosAdapter (
 
     private fun converteDoubleEmMoeda(valor: Double): String{
         return try {
-            val valorConvertido: String = "R$ " + valor.toBigDecimal().toPlainString()
+            var valorConvertido: String = "R$ " + valor.toBigDecimal().toPlainString()
             if(valorConvertido.indexOf('.') != -1)
-                valorConvertido.replace('.', ',')
+                valorConvertido = valorConvertido.replace('.', ',')
 
             valorConvertido
         } catch (ignored: Exception) {

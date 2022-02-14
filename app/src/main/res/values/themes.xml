@@ -6,11 +6,21 @@
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/secondaryColor</item>
 
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <!-- Texto Primário -->
+        <item name="colorOnPrimary">@color/textoPreto</item>
+        <!-- Texto Secundário -->
+        <item name="colorOnSecondary">@color/textoCinza</item>
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="primaryText" parent="android:Theme">
+        <item name="android:textColor">@color/textoPreto</item>
+    </style>
+    <style name="secondaryText" parent="android:Theme">
+        <item name="android:textColor">@color/textoCinza</item>
+    </style>
+
 </resources>
