@@ -2,36 +2,39 @@ package br.com.sicredi.sicredieventos.eventos
 
 import br.com.sicredi.sicredieventos.entidades.Evento
 import br.com.sicredi.sicredieventos.eventos.view.EventosView
+import br.com.sicredi.sicredieventos.utilitarios.Erros
+import com.google.gson.Gson
 import org.json.JSONArray
 
 class EventosPresenter(eventosView: EventosView) {
-
 
     val model = EventosModel(this)
     val view = eventosView
 
     fun processaBuscaEventos(retornoString: String) {
 
-        var retornoJson = JSONArray(retornoString)
+        try {
 
+            val eventos: ArrayList<Evento> = ArrayList()
+            val gson = Gson()
+            val jsonArray = JSONArray(retornoString)
 
+            for (i in 0 until jsonArray.length()) {
+                val evento = gson.fromJson(jsonArray.get(i).toString(), Evento::class.java)
+                eventos.add(evento)
+            }
 
-        val eventos: ArrayList<Evento> = ArrayList()
-        val evento = Evento(
-            1,
-            "Feira de adoção de animais na Redenção",
-            "O Patas Dadas estará na Redenção, nesse domingo, com cães \n" +
-                    "para adoção e produtos à venda...",
-            null,
-            123,
-            "",
-            123,
-            123,
-            29.99
-        )
-        eventos.add(evento)
+            view.recebeEventos(eventos)
 
-        view.recebeEventos(eventos)
+        }catch (e: Exception){
+
+            view.erroBuscaEvento(Erros.geraMensagemDeErro(
+                "Erro ao processar os eventos retornados do Servidor!",
+                Erros.ERRO0,
+                e
+            ))
+
+        }
+
     }
-
 }

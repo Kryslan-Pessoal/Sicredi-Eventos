@@ -1,6 +1,7 @@
 package br.com.sicredi.sicredieventos.eventos
 
 import br.com.sicredi.sicredieventos.utilitarios.Constantes
+import br.com.sicredi.sicredieventos.utilitarios.Erros
 import br.com.sicredi.sicredieventos.utilitarios.LoadedV2.LoadedV2
 import br.com.sicredi.sicredieventos.utilitarios.LoadedV2.SolicitacaoGet
 import java.lang.Exception
@@ -29,14 +30,20 @@ class EventosModel (eventosPresenter: EventosPresenter) {
              * @param retorno: Erro retornado
              * @param throwable: Exception lançada (caso tenha) (pode ser null se não tiver)
              */
-            override fun onFailure(retorno: String?, throwable: Exception?) {
-                var eu = 22;
+            override fun onFailure(retorno: String, throwable: Exception?) {
+
+                presenter.view.erroBuscaEvento(
+                    Erros.geraMensagemDeErro(
+                    "Erro ao buscar eventos no Servidor!",
+                    Erros.ERRO1,
+                    throwable
+                ))
+
             }
         }
 
         solicitacaoGet.send(url, impl)
 
-        presenter.processaBuscaEventos()
     }
 
 }

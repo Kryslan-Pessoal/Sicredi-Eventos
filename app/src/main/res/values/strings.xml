@@ -2,4 +2,8 @@
     <string name="app_name">Sicredi Eventos</string>
     <string name="logo_sicredi_eventos">Logo Sicredi Eventos</string>
     <string name="foto_do_evento">Foto do Evento</string>
+    <string name="t_tulo">Título</string>
+    <string name="descri_o">Descrição</string>
+    <string name="data">Data</string>
+    <string name="valor">Valor</string>
 </resources>

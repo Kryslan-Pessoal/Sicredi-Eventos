@@ -8,6 +8,7 @@ import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicredieventos.databinding.ActivityEventosBinding
 import br.com.sicredi.sicredieventos.entidades.Evento
 import br.com.sicredi.sicredieventos.eventos.EventosPresenter
+import java.lang.Exception
 
 class EventosView : AppCompatActivity() {
 
@@ -52,8 +53,9 @@ class EventosView : AppCompatActivity() {
         preencheListView()
 
     }
-
-
+    fun erroBuscaEvento(mensagemDeErro: String) {
+        //TODO
+    }
     //endregion Busca Eventos
 
     //region Preenche ListView com Eventos

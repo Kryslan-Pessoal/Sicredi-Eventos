@@ -14,9 +14,9 @@ data class Evento(
     /** Imagem de ícone para o evento */
     var image: String,
     /**  */
-    var latitude: Long,
+    var latitude: Double,
     /**  */
-    var longitude: Long,
+    var longitude: Double,
     /** Preço */
     var price: Double
 )
