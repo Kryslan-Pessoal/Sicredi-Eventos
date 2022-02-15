@@ -10,10 +10,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SicrediEventos">
-        <activity android:name=".DadosDoEventoView"></activity>
-        <activity android:name=".eventos.view.EventosView" />
+        <activity android:name="br.com.sicredi.sicrediEventos.DadosDoEventoView"></activity>
+        <activity android:name="br.com.sicredi.sicrediEventos.eventos.view.EventosView" />
         <activity
-            android:name=".TelaInicialDeCarregamento"
+            android:name="br.com.sicredi.sicrediEventos.TelaInicialDeCarregamento"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar"
             tools:node="merge">

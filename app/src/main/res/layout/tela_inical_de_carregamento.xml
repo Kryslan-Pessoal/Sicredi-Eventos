@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaInicialDeCarregamento">
+    tools:context="br.com.sicredi.sicrediEventos.TelaInicialDeCarregamento">
 
     <ImageView
         android:layout_width="170dp"
