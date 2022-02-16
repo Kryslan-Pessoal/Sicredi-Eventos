@@ -5,6 +5,9 @@
     <color name="secondaryColor">#3C781E</color>
     <color name="accent">#757575</color>
 
+    <!-- Background -->
+    <color name="fundo_cinza">#F0F0F0</color>
+    <color name="fab_cinza">#9F9F9F</color>
 
     <!-- Texto -->
     <color name="textoPreto">#FF000000</color>

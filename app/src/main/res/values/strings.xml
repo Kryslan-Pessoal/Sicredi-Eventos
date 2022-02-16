@@ -6,4 +6,9 @@
     <string name="descri_o">Descrição</string>
     <string name="data">Data</string>
     <string name="valor">Valor</string>
+    <string name="imagem_do_evento">Imagem do Evento</string>
+    <string name="local_do_evento">Local do Evento</string>
+    <string name="t_tulo_do_evento">Título do Evento</string>
+    <string name="pre_o">Preço</string>
+    <string name="check_in">Check-in</string>
 </resources>
