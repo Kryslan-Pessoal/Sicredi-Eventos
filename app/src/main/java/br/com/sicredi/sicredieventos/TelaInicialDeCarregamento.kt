@@ -1,4 +1,4 @@
-package br.com.sicredi.sicredieventos
+package br.com.sicredi.sicrediEventos
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,8 @@ import android.os.CountDownTimer
 import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
-import br.com.sicredi.sicredieventos.eventos.view.EventosView
+import br.com.sicredi.sicrediEventos.eventos.view.EventosView
+import br.com.sicredi.sicredieventos.R
 
 
 /**

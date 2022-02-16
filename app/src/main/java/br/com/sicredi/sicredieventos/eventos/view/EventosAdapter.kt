@@ -1,4 +1,4 @@
-package br.com.sicredi.sicredieventos.eventos.view
+package br.com.sicredi.sicrediEventos.eventos.view
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import br.com.sicredi.sicredieventos.R
-import br.com.sicredi.sicredieventos.entidades.Evento
+import br.com.sicredi.sicrediEventos.entidades.Evento
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 

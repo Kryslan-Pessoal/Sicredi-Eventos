@@ -1,9 +1,9 @@
-package br.com.sicredi.sicredieventos.eventos
+package br.com.sicredi.sicrediEventos.eventos
 
-import br.com.sicredi.sicredieventos.utilitarios.Constantes
-import br.com.sicredi.sicredieventos.utilitarios.Erros
-import br.com.sicredi.sicredieventos.utilitarios.LoadedV2.LoadedV2
-import br.com.sicredi.sicredieventos.utilitarios.LoadedV2.SolicitacaoGet
+import br.com.sicredi.sicrediEventos.utilitarios.Erros
+import br.com.sicredi.sicrediEventos.utilitarios.LoadedV2.LoadedV2
+import br.com.sicredi.sicrediEventos.utilitarios.LoadedV2.SolicitacaoGet
+import br.com.sicredi.sicrediEventos.utilitarios.Constantes
 import java.lang.Exception
 
 class EventosModel (eventosPresenter: EventosPresenter) {

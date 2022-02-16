@@ -1,17 +1,15 @@
-package br.com.sicredi.sicredieventos.eventos.view
+package br.com.sicredi.sicrediEventos.eventos.view
 
 import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
-import br.com.sicredi.sicredieventos.DadosDoEventoView
+import br.com.sicredi.sicrediEventos.DadosDoEventoView
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicredieventos.databinding.ActivityEventosBinding
-import br.com.sicredi.sicredieventos.entidades.Evento
-import br.com.sicredi.sicredieventos.eventos.EventosPresenter
+import br.com.sicredi.sicrediEventos.entidades.Evento
+import br.com.sicredi.sicrediEventos.eventos.EventosPresenter
 import java.lang.Exception
 
 class EventosView : AppCompatActivity() {

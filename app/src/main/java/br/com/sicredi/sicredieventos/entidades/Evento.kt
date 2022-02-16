@@ -1,4 +1,4 @@
-package br.com.sicredi.sicredieventos.entidades
+package br.com.sicredi.sicrediEventos.entidades
 
 data class Evento(
     /** Id do item, usado para fazer check-in*/

@@ -1,8 +1,8 @@
-package br.com.sicredi.sicredieventos.eventos
+package br.com.sicredi.sicrediEventos.eventos
 
-import br.com.sicredi.sicredieventos.entidades.Evento
-import br.com.sicredi.sicredieventos.eventos.view.EventosView
-import br.com.sicredi.sicredieventos.utilitarios.Erros
+import br.com.sicredi.sicrediEventos.entidades.Evento
+import br.com.sicredi.sicrediEventos.eventos.view.EventosView
+import br.com.sicredi.sicrediEventos.utilitarios.Erros
 import com.google.gson.Gson
 import org.json.JSONArray
 
@@ -28,7 +28,8 @@ class EventosPresenter(eventosView: EventosView) {
 
         }catch (e: Exception){
 
-            view.erro(Erros.geraMensagemDeErro(
+            view.erro(
+                Erros.geraMensagemDeErro(
                 "Erro ao processar os eventos retornados do Servidor!",
                 Erros.ERRO0,
                 e

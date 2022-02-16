@@ -1,4 +1,4 @@
-package br.com.sicredi.sicredieventos.utilitarios.LoadedV2;
+package br.com.sicredi.sicrediEventos.utilitarios.LoadedV2;
 
 import androidx.annotation.Nullable;
 

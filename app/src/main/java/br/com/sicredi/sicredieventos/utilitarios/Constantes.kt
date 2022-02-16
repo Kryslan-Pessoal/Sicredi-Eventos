@@ -1,4 +1,4 @@
-package br.com.sicredi.sicredieventos.utilitarios
+package br.com.sicredi.sicrediEventos.utilitarios
 
 class Constantes {
     companion object{
