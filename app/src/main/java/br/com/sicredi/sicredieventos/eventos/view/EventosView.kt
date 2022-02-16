@@ -5,7 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
-import br.com.sicredi.sicrediEventos.DadosDoEventoView
+import br.com.sicredi.sicrediEventos.dadosDosEventos.DadosDoEventoView
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicredieventos.databinding.ActivityEventosBinding
 import br.com.sicredi.sicrediEventos.entidades.Evento
@@ -68,9 +68,20 @@ class EventosView : AppCompatActivity() {
 
         binding.eventosListView.isClickable = true
         binding.eventosListView.adapter = EventosAdapter(this, eventos)
-        binding.eventosListView.setOnItemClickListener {parent, view, position, id ->
+        binding.eventosListView.setOnItemClickListener { _, _, position, _ ->
             val intent = Intent(this, DadosDoEventoView::class.java)
-            //intent.putExtra("keyIdentifier", value)
+
+            val evento = eventos[position]
+
+            intent.putExtra("id", evento.id)
+            intent.putExtra("title", evento.title)
+            intent.putExtra("description", evento.description)
+            intent.putExtra("date", evento.date)
+            intent.putExtra("image", evento.image)
+            intent.putExtra("latitude", evento.latitude)
+            intent.putExtra("longitude", evento.longitude)
+            intent.putExtra("price", evento.price)
+
             startActivity(intent)
         }
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="br.com.sicredi.sicrediEventos.DadosDoEventoView">
+    tools:context="br.com.sicredi.sicrediEventos.dadosDosEventos.DadosDoEventoView">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBarLayout"
@@ -27,7 +27,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <ImageView
-                android:id="@+id/expandedImage"
+                android:id="@+id/imagemEvento_imageView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"

@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicrediEventos.entidades.Evento
+import br.com.sicredi.sicrediEventos.utilitarios.Util.Companion.converteDoubleEmMoeda
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -18,7 +19,7 @@ class EventosAdapter (
     private val eventos: ArrayList<Evento>
 ) : ArrayAdapter<Evento>(context, R.layout.list_evento, eventos) {
 
-    @SuppressLint("ViewHolder", "InflateParams")
+    @SuppressLint("ViewHolder", "InflateParams", "SetTextI18n")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         //Carrega Inflater e View
@@ -45,22 +46,12 @@ class EventosAdapter (
         //Carrega os textos
         tituloEvento_TextView.text = eventos[position].title
         descricaoEvento_textView.text = eventos[position].description
-        //TODO: converter a data em formato normal
+        //TODO: data não foi especificada como será feita a conversão
         dataEvento_TextView.text = "08/02/2022"//eventos[position].date
         precoEvento_textView.text = converteDoubleEmMoeda(eventos[position].price)
 
         return view
     }
 
-    private fun converteDoubleEmMoeda(valor: Double): String{
-        return try {
-            var valorConvertido: String = "R$ " + valor.toBigDecimal().toPlainString()
-            if(valorConvertido.indexOf('.') != -1)
-                valorConvertido = valorConvertido.replace('.', ',')
 
-            valorConvertido
-        } catch (ignored: Exception) {
-            "R$ 0,00"
-        }
-    }
 }
