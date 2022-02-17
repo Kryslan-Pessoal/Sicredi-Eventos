@@ -9,6 +9,7 @@ class Erros {
     companion object {
         const val ERRO0 = 0
         const val ERRO1 = 1
+        const val ERRO2 = 2
 
         /** Gera uma mensagem de erro padrão
          * Ex:

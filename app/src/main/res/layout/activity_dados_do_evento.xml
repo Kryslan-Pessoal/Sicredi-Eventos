@@ -152,13 +152,13 @@
 
     <!-- FAB ver no Mapa -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/abrirNoMapa_Fab"
+        android:id="@+id/abrirNoMapa_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
         app:backgroundTint="@color/white"
         app:tint="@null"
-        android:src="@drawable/pin_map2"
+        android:src="@drawable/pin_map"
         app:layout_anchor="@id/appBarLayout"
         app:layout_anchorGravity="bottom|end|right"
         app:maxImageSize="28dp"
@@ -166,6 +166,7 @@
 
     <!-- FAB compartilhar -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/compartilhar_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"

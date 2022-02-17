@@ -5,8 +5,10 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.InputType
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
@@ -91,18 +93,18 @@ class DadosDoEventoView : AppCompatActivity() {
 
     //region Buttons
     private fun listenerBotaoMapa() {
-        findViewById<FloatingActionButton>(R.id.abrirNoMapa_Fab).setOnClickListener{
+        findViewById<FloatingActionButton>(R.id.abrirNoMapa_fab).setOnClickListener{
             abreMapa()
         }
     }
     private fun listenerBotaoCompartilhar() {
-        findViewById<FloatingActionButton>(R.id.abrirNoMapa_Fab).setOnClickListener{
-            abreMapa()
+        findViewById<FloatingActionButton>(R.id.compartilhar_fab).setOnClickListener{
+            compartilhar()
         }
     }
     private fun listenerBotaoCheckIn() {
         findViewById<Button>(R.id.checkIn_button).setOnClickListener{
-            fazerCheckIn()
+            pegaDadosDoUsuarioParaCheckIn()
         }
     }
     //endregion Buttons
@@ -125,7 +127,13 @@ class DadosDoEventoView : AppCompatActivity() {
     private fun compartilhar(){
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+
+            //TODO: data não foi especificada como será feita a conversão
+            val dataDoEvento = "08/03/2022"  //evento.date
+
+            var texto = "Hey, ficou sabendo do evento que vai ter dia $dataDoEvento?\n" +
+                    "O Evento vai ser: ${evento.title}! Não podemos perder!"
+            putExtra(Intent.EXTRA_TEXT, texto)
             type = "text/plain"
         }
 
@@ -135,10 +143,46 @@ class DadosDoEventoView : AppCompatActivity() {
     //endregion Compartilhar
 
     //region Check-in
-    private fun fazerCheckIn() {
+    private fun pegaDadosDoUsuarioParaCheckIn() {
+        val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Dados Para Check-In")
+
+        val nome_editText = EditText(this)
+        nome_editText.hint = "Nome"
+        nome_editText.inputType = InputType.TYPE_CLASS_TEXT
+        builder.setView(nome_editText)
+
+        val email_editText = EditText(this)
+        email_editText.hint = "Email"
+        email_editText.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+        builder.setView(nome_editText)
+
+        builder.setPositiveButton("OK") { _, _ ->
+            val nome = nome_editText.text.toString()
+            val email = email_editText.text.toString()
+
+            val seDadosValidos: Boolean = presenter.validaDadosParaCheckIn(nome, email)
+            if(seDadosValidos){
+                fazCheckIn(nome, email)
+            }else{
+                erro("Dados inválidos, preencha corretamente!")
+            }
+        }
+        builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
+
+        builder.show()
+    }
+    private fun fazCheckIn(nome: String, email: String) {
         showLoading()
 
-        presenter.model.fazCheckIn()
+        presenter.model.fazCheckIn(evento.id, nome, email)
+    }
+    fun sucessoCheckIn() {
+
+        hideLoading()
+
+        sucesso("Check-in feito com Sucesso! Não deixe de compartilhar o Evento. =D")
+
     }
     //endregion Check-in
 
@@ -167,6 +211,18 @@ class DadosDoEventoView : AppCompatActivity() {
         builder.setMessage(mensagemDeErro)
         builder.setPositiveButton("Ok"){ _, _ -> }
         builder.setIcon(R.drawable.ic_erro)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+    private fun sucesso(mensagem: String){
+
+        hideLoading()
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Sucesso!")
+        builder.setMessage(mensagem)
+        builder.setPositiveButton("Ok"){ _, _ -> }
+        builder.setIcon(R.drawable.ic_sucesso)
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }

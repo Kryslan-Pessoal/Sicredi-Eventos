@@ -1,40 +1,38 @@
 package br.com.sicredi.sicrediEventos.dadosDosEventos
 
-import br.com.sicredi.sicrediEventos.entidades.Evento
 import br.com.sicredi.sicrediEventos.utilitarios.Erros
-import com.google.gson.Gson
-import org.json.JSONArray
+import org.json.JSONObject
 
 class DadosDoEventoPresenter(dadosDoEventoView: DadosDoEventoView) {
 
     val model = DadosDoEventoModel(this)
     val view = dadosDoEventoView
 
-    fun processaBuscaEventos(retornoString: String) {
+    fun processaRetornoCheckIn(retornoString: String) {
 
         try {
 
-            val eventos: ArrayList<Evento> = ArrayList()
-            val gson = Gson()
-            val jsonArray = JSONArray(retornoString)
+            val jsonObject = JSONObject(retornoString)
 
-            for (i in 0 until jsonArray.length()) {
-                val evento = gson.fromJson(jsonArray.get(i).toString(), Evento::class.java)
-                eventos.add(evento)
-            }
+            val codigoDeRetorno = jsonObject.getString("code")
 
-            view.resultadoCheckIn(eventos)
+            if(codigoDeRetorno.equals("200"))
+                view.sucessoCheckIn()
+            else
+                view.erro("Check-in Não foi Feito, código de erro: $codigoDeRetorno.")
 
         }catch (e: Exception){
-
             view.erro(
                 Erros.geraMensagemDeErro(
                 "Erro ao processar os eventos retornados do Servidor!",
                 Erros.ERRO0,
                 e
             ))
-
         }
 
+    }
+    /** Todas as validações que julgar necessárias */
+    fun validaDadosParaCheckIn(nome: String, email: String): Boolean {
+        return !(nome.isEmpty() || email.isEmpty())
     }
 }
