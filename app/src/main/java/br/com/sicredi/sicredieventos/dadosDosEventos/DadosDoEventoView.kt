@@ -29,6 +29,8 @@ class DadosDoEventoView : AppCompatActivity() {
 
     private lateinit var progressDialog: ProgressDialog
     var presenter = DadosDoEventoPresenter(this)
+    private var nome = ""
+
     //endregion Globais
 
     //region onCreate
@@ -104,7 +106,7 @@ class DadosDoEventoView : AppCompatActivity() {
     }
     private fun listenerBotaoCheckIn() {
         findViewById<Button>(R.id.checkIn_button).setOnClickListener{
-            pegaDadosDoUsuarioParaCheckIn()
+            pegaNomeDoUsuarioParaCheckIn()
         }
     }
     //endregion Buttons
@@ -131,8 +133,9 @@ class DadosDoEventoView : AppCompatActivity() {
             //TODO: data não foi especificada como será feita a conversão
             val dataDoEvento = "08/03/2022"  //evento.date
 
-            var texto = "Hey, ficou sabendo do evento que vai ter dia $dataDoEvento?\n" +
+            val texto = "Hey, ficou sabendo do evento que vai ter dia $dataDoEvento?\n" +
                     "O Evento vai ser: ${evento.title}! Não podemos perder!"
+
             putExtra(Intent.EXTRA_TEXT, texto)
             type = "text/plain"
         }
@@ -143,7 +146,8 @@ class DadosDoEventoView : AppCompatActivity() {
     //endregion Compartilhar
 
     //region Check-in
-    private fun pegaDadosDoUsuarioParaCheckIn() {
+    private fun pegaNomeDoUsuarioParaCheckIn() {
+
         val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
         builder.setTitle("Dados Para Check-In")
 
@@ -152,27 +156,46 @@ class DadosDoEventoView : AppCompatActivity() {
         nome_editText.inputType = InputType.TYPE_CLASS_TEXT
         builder.setView(nome_editText)
 
-        val email_editText = EditText(this)
-        email_editText.hint = "Email"
-        email_editText.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
-        builder.setView(nome_editText)
+        builder.setPositiveButton("OK") { dialog, _ ->
+            nome = nome_editText.text.toString()
 
-        builder.setPositiveButton("OK") { _, _ ->
-            val nome = nome_editText.text.toString()
-            val email = email_editText.text.toString()
-
-            val seDadosValidos: Boolean = presenter.validaDadosParaCheckIn(nome, email)
-            if(seDadosValidos){
-                fazCheckIn(nome, email)
+            if(nome.isNotEmpty()){
+                pegaEmailUsuarioParaCheckIn()
             }else{
                 erro("Dados inválidos, preencha corretamente!")
+                dialog.cancel()
             }
         }
         builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
 
         builder.show()
     }
-    private fun fazCheckIn(nome: String, email: String) {
+    private fun pegaEmailUsuarioParaCheckIn() {
+
+        val builder: android.app.AlertDialog.Builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Dados Para Check-In")
+
+        val email_editText = EditText(this)
+        email_editText.hint = "Email"
+        email_editText.inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+        builder.setView(email_editText)
+
+        builder.setPositiveButton("OK") { dialog, _ ->
+            val email = email_editText.text.toString()
+
+            if(email.isNotEmpty()){
+                fazCheckIn(email)
+            }else{
+                erro("Dados inválidos, preencha corretamente!")
+                dialog.cancel()
+            }
+        }
+        builder.setNegativeButton("Cancel") { dialog, _ -> dialog.cancel() }
+
+        builder.show()
+    }
+
+    private fun fazCheckIn(email: String) {
         showLoading()
 
         presenter.model.fazCheckIn(evento.id, nome, email)
