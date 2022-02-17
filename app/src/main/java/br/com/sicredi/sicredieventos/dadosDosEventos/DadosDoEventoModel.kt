@@ -2,19 +2,21 @@ package br.com.sicredi.sicrediEventos.dadosDosEventos
 
 import br.com.sicredi.sicrediEventos.utilitarios.Erros
 import br.com.sicredi.sicrediEventos.utilitarios.LoadedV2.LoadedV2
-import br.com.sicredi.sicrediEventos.utilitarios.LoadedV2.SolicitacaoGet
 import br.com.sicredi.sicrediEventos.utilitarios.Constantes
+import br.com.sicredi.sicrediEventos.utilitarios.LoadedV2.SolicitacaoPost
 import java.lang.Exception
 
-class EventosModel (eventosPresenter: EventosPresenter) {
+class DadosDoEventoModel (dadosDoEventoPresenter: DadosDoEventoPresenter) {
 
-    private val presenter = eventosPresenter
+    private val presenter = dadosDoEventoPresenter
 
-    fun buscaEventos() {
+    fun fazCheckIn() {
 
-        val url = Constantes.API_GET_EVENTOS + "events"
+        val url = Constantes.BASE_API + "checkin"
 
-        val solicitacaoGet = SolicitacaoGet()
+        val solicitacaoPost = SolicitacaoPost()
+
+        var bodyJsonString: String
 
         val impl = object : LoadedV2 {
             /** Quando a resposta do Servidor é bem sucedida
@@ -42,7 +44,7 @@ class EventosModel (eventosPresenter: EventosPresenter) {
             }
         }
 
-        solicitacaoGet.send(url, impl)
+        solicitacaoPost.send(url, impl)
 
     }
 

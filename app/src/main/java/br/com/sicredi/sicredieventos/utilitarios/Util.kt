@@ -8,6 +8,10 @@ class Util {
                 if(valorConvertido.indexOf('.') != -1)
                     valorConvertido = valorConvertido.replace('.', ',')
 
+                if(valorConvertido.substring(valorConvertido.indexOf(',')).length < 2){
+                    valorConvertido += "0"
+                }
+
                 valorConvertido
             } catch (ignored: Exception) {
                 "R$ 0,00"

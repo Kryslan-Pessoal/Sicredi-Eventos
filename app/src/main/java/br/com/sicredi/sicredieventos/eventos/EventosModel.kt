@@ -12,7 +12,7 @@ class EventosModel (eventosPresenter: EventosPresenter) {
 
     fun buscaEventos() {
 
-        val url = Constantes.API_GET_EVENTOS + "events"
+        val url = Constantes.BASE_API + "events"
 
         val solicitacaoGet = SolicitacaoGet()
 

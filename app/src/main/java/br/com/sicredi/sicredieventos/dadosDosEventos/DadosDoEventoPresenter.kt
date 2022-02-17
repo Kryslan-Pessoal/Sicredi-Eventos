@@ -1,15 +1,14 @@
 package br.com.sicredi.sicrediEventos.dadosDosEventos
 
 import br.com.sicredi.sicrediEventos.entidades.Evento
-import br.com.sicredi.sicrediEventos.eventos.view.EventosView
 import br.com.sicredi.sicrediEventos.utilitarios.Erros
 import com.google.gson.Gson
 import org.json.JSONArray
 
-class EventosPresenter(eventosView: EventosView) {
+class DadosDoEventoPresenter(dadosDoEventoView: DadosDoEventoView) {
 
-    val model = EventosModel(this)
-    val view = eventosView
+    val model = DadosDoEventoModel(this)
+    val view = dadosDoEventoView
 
     fun processaBuscaEventos(retornoString: String) {
 
@@ -24,7 +23,7 @@ class EventosPresenter(eventosView: EventosView) {
                 eventos.add(evento)
             }
 
-            view.recebeEventos(eventos)
+            view.resultadoCheckIn(eventos)
 
         }catch (e: Exception){
 
