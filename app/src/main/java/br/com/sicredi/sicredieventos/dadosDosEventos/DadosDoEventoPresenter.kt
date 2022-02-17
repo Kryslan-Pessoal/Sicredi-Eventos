@@ -31,8 +31,4 @@ class DadosDoEventoPresenter(dadosDoEventoView: DadosDoEventoView) {
         }
 
     }
-    /** Todas as validações que julgar necessárias */
-    fun validaDadosParaCheckIn(nome: String, email: String): Boolean {
-        return !(nome.isEmpty() || email.isEmpty())
-    }
 }

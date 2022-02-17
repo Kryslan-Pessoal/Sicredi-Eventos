@@ -54,8 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        android:background="@color/fundo_cinza">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,7 +66,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                app:cardBackgroundColor="@color/white"
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
@@ -89,8 +87,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
+                        style="@style/primaryText"
                         android:text="@string/t_tulo_do_evento"
-                        android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:layout_marginBottom="3dp"/>
@@ -125,8 +123,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
 
+                        style="@style/secondaryText"
                         android:text="@string/descri_o"
-                        android:textColor="@color/black"
                         android:textSize="14sp"
                         android:layout_marginBottom="15dp"/>
 

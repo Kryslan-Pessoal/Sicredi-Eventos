@@ -19,3 +19,4 @@
 
 * Todas as chamadas podem ser verificadas separadamente no Postman, importe o arquivo <br>
 "SolicitacoesSicredEventos.postman_collection.json" na raiz do projeto para o programa postman.
+* O App é preparado para tema claro e escuro
