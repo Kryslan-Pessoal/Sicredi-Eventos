@@ -3,6 +3,7 @@
 <p>
   App desenvolvido para processo seletivo do Sicredi.<br>
   Desenvolvido para Android com Kotlin.<br>
+  (Algumas funções já prontas em Java usadas em outros projetos foram utilizadas para agilizar o desenvolvimento)
   As telas foram desenhadas no Adobe XD (Os protótipos das telas se encontram na pasta "Esboço das Telas") 
     Obs: Para melhor entendimento do projeto indico fortemente que verifique os esboços das telas, <br>
     pois os mesmos possuem variações que não irão para o projeto final, mas são ideias válidas para o projeto.
