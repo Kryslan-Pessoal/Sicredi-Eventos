@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Imagem do Evento -->
+    <ImageView
+        android:id="@+id/logoEvento_imageView"
+        android:layout_width="50dp"
+
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/foto_do_evento"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sicredi_eventos_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tituloEvento_TextView"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
+
+        android:layout_marginStart="4dp"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/t_tulo"
+        style="@style/primaryText"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/descricaoEvento_textView"
+        app:layout_constraintEnd_toStartOf="@+id/dataEvento_TextView"
+        app:layout_constraintStart_toEndOf="@+id/logoEvento_imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Descrição -->
+    <TextView
+        android:id="@+id/descricaoEvento_textView"
+        style="@style/secondaryText"
+        android:layout_width="0dp"
+
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="22dp"
+
+        android:layout_marginBottom="10dp"
+        android:text="@string/descri_o"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toStartOf="@+id/precoEvento_textView"
+        app:layout_constraintStart_toStartOf="@+id/tituloEvento_TextView"
+        app:layout_constraintTop_toBottomOf="@+id/tituloEvento_TextView"
+        tools:ignore="SmallSp" />
+
+    <!-- Data -->
+
+    <!-- Preço -->
+    <TextView
+        android:id="@+id/dataEvento_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="16dp"
+        android:textStyle="bold"
+
+        android:layout_marginEnd="16dp"
+        android:text="@string/data"
+        android:textColor="@color/texto_verde"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Separador -->
+
+    <TextView
+        android:id="@+id/precoEvento_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginEnd="16dp"
+        android:text="@string/valor"
+        android:textStyle="bold"
+
+        android:textColor="@color/texto_verde"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/descricaoEvento_textView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoEvento_imageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
