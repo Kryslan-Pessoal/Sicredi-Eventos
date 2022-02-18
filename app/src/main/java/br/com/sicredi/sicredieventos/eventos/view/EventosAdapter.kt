@@ -11,6 +11,7 @@ import android.widget.TextView
 import br.com.sicredi.sicredieventos.R
 import br.com.sicredi.sicrediEventos.entidades.Evento
 import br.com.sicredi.sicrediEventos.utilitarios.Util.Companion.converteDoubleEmMoeda
+import br.com.sicredi.sicrediEventos.utilitarios.Util.Companion.converteMilisegundosEmData
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 
@@ -46,8 +47,7 @@ class EventosAdapter (
         //Carrega os textos
         tituloEvento_TextView.text = eventos[position].title
         descricaoEvento_textView.text = eventos[position].description
-        //TODO: data não foi especificada como será feita a conversão
-        dataEvento_TextView.text = "08/02/2022"//eventos[position].date
+        dataEvento_TextView.text = converteMilisegundosEmData(eventos[position].date)
         precoEvento_textView.text = converteDoubleEmMoeda(eventos[position].price)
 
         return view
