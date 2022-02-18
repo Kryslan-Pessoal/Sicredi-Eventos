@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import br.com.sicredi.sicrediEventos.entidades.Evento
 import br.com.sicredi.sicrediEventos.utilitarios.Util.Companion.converteDoubleEmMoeda
+import br.com.sicredi.sicrediEventos.utilitarios.Util.Companion.converteMilisegundosEmData
 import br.com.sicredi.sicredieventos.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.Callback
@@ -83,11 +84,7 @@ class DadosDoEventoView : AppCompatActivity() {
 
         //Textos
         findViewById<TextView>(R.id.titulo_textView).text = evento.title
-
-        //TODO: data não foi especificada como será feita a conversão
-        //findViewById<TextView>(R.id.data_textView).text = evento.date + ""
-        findViewById<TextView>(R.id.data_textView).text ="08/03/2022"
-
+        findViewById<TextView>(R.id.data_textView).text = converteMilisegundosEmData(evento.date)
         findViewById<TextView>(R.id.preco_textView).text = converteDoubleEmMoeda(evento.price)
         findViewById<TextView>(R.id.descricao_textView).text = evento.description
     }
@@ -130,8 +127,7 @@ class DadosDoEventoView : AppCompatActivity() {
         val sendIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
 
-            //TODO: data não foi especificada como será feita a conversão
-            val dataDoEvento = "08/03/2022"  //evento.date
+            val dataDoEvento = converteMilisegundosEmData(evento.date)
 
             val texto = "Hey, ficou sabendo do evento que vai ter dia $dataDoEvento?\n" +
                     "O Evento vai ser: ${evento.title}! Não podemos perder!"

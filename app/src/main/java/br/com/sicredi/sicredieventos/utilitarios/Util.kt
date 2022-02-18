@@ -1,5 +1,9 @@
 package br.com.sicredi.sicrediEventos.utilitarios
 
+import android.annotation.SuppressLint
+import java.text.SimpleDateFormat
+import java.util.*
+
 class Util {
     companion object{
         fun converteDoubleEmMoeda(valor: Double): String{
@@ -17,6 +21,16 @@ class Util {
             } catch (ignored: Exception) {
                 "R$ 0,00"
             }
+        }
+        @SuppressLint("SimpleDateFormat")
+        fun converteMilisegundosEmData(ms: Long): String? {
+            val c = Calendar.getInstance()
+            c[Calendar.HOUR] = 0
+            c[Calendar.MINUTE] = 0
+            c[Calendar.SECOND] = 0
+            c[Calendar.MILLISECOND] = 0
+            c.add(Calendar.MILLISECOND, ms.toInt())
+            return SimpleDateFormat("dd/MM/yyyy HH:mm").format(c.time)
         }
     }
 }

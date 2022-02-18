@@ -25,7 +25,7 @@ class DadosDoEventoPresenter(dadosDoEventoView: DadosDoEventoView) {
             view.erro(
                 Erros.geraMensagemDeErro(
                 "Erro ao processar os eventos retornados do Servidor!",
-                Erros.ERRO0,
+                Erros.ERRO3,
                 e
             ))
         }
